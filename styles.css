@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: "Roboto Condensed", monospace, sans-serif;
+    background-color: #eee;
+}
+
+.container {
+    margin: 0 auto;
+    width: 600px;
+    height: 100vh;
+
+    background-color: #fff;
+}
+
+header {
+    margin: 0 auto;
+    padding: 46px;
+    box-sizing: border-box;
+
+    height: 167px;
+
+    background-image: url(./images/image.png);
+    background-size: cover;
+
+    color: white;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 39px;
+}
+
+#header-subtitle {
+    font-size: 20px;
+    font-weight: 300;
+}
