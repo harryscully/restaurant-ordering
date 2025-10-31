@@ -5,6 +5,10 @@ document.addEventListener("click", (e) => {
         addOrderToCart(e.target.dataset.add)
     } else if (e.target.dataset.remove) {
         removeItemFromCart(e.target.dataset.remove)
+    } else if (e.target.id == "complete-order") {
+        showPaymentModal()
+    } else if (e.target.id == "pay") {
+        hidePaymentModal()
     }
 })
 
@@ -96,6 +100,14 @@ function getMenuItems(arr) {
 
 function renderMenuItems() {
     document.getElementById("menu-items").innerHTML = getMenuItems(menuArray)
+}
+
+function showPaymentModal() {
+    document.getElementById("my-modal").classList.toggle("hidden")
+}
+
+function hidePaymentModal() {
+    document.getElementById("my-modal").classList.add("hidden")
 }
 
 renderMenuItems()

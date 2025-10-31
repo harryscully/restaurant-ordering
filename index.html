@@ -31,9 +31,19 @@
 
             </div>
             <hr>
-            <p id="total-price-text">Total Price: <span id="total-price">£20</span></p>
+            <p id="total-price-text">Total Price: <span id="total-price"></span></p>
             <button id="complete-order">Complete Order</button>
         </section>
+
+        <div id="my-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Enter card details</h3>
+                <input id="name" type="text" placeholder="Enter your name">
+                <input id="card-num" type="number" placeholder="Enter card number">
+                <input id="cvv" type="number" placeholder="Enter CVV">
+                <button id="pay">Pay</button>
+            </div>
+        </div>
     </main>
     <script src="main.js" type="module"></script>
 </body>
