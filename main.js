@@ -13,6 +13,7 @@ document.addEventListener("click", (e) => {
 document.getElementById("payment-form").addEventListener("submit", (e) => {
     e.preventDefault()
     hidePaymentModal()
+    showOrderSuccess()
 })
 
 let cartArray = []
@@ -113,6 +114,10 @@ function hidePaymentModal() {
     cartArray = []
     hideCart()
     document.getElementById("my-modal").classList.add("hidden")
+}
+
+function showOrderSuccess() {
+    document.getElementById("order-success").classList.remove("hidden")
 }
 
 renderMenuItems()

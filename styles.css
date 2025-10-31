@@ -225,3 +225,23 @@ input {
 .hidden {
     display: none;
 }
+
+#order-success {
+    padding: 0 48px 48px;
+    background-color: #fff;
+}
+
+#order-success p {
+    height: 120px;
+    width: 100%;
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #065F46;
+    background-color: #ECFDF5;
+
+    font-size: 24px;
+    text-align: center;
+}
