@@ -12,8 +12,11 @@ document.addEventListener("click", (e) => {
 
 document.getElementById("payment-form").addEventListener("submit", (e) => {
     e.preventDefault()
+
+    const userName = document.getElementById("name").value
+
     hidePaymentModal()
-    showOrderSuccess()
+    showOrderSuccess(userName)
 })
 
 let cartArray = []
@@ -117,8 +120,13 @@ function hidePaymentModal() {
     document.getElementById("my-modal").classList.add("hidden")
 }
 
-function showOrderSuccess() {
-    document.getElementById("order-success").classList.remove("hidden")
+function showOrderSuccess(userName) {
+    const orderSuccess = document.getElementById("order-success")
+    const orderSuccessText = document.createElement("p")
+    
+    orderSuccess.classList.remove("hidden")
+    orderSuccessText.textContent = `Thanks, ${userName}. Your order is on its way!`
+    orderSuccess.appendChild(orderSuccessText)
 }
 
 function hideOrderSuccess() {
