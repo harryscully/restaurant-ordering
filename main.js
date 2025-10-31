@@ -3,6 +3,8 @@ import { menuArray } from "./data/data.js";
 document.addEventListener("click", (e) => {
     if (e.target.dataset.add) {
         addOrderToCart(e.target.dataset.add)
+    } else if (e.target.dataset.remove) {
+        removeItemFromCart(e.target.dataset.remove)
     }
 })
 
@@ -12,10 +14,30 @@ function addOrderToCart(itemData) {
     const itemObj = menuArray.filter((el) => {
         return el.name == itemData
     })[0]
+    const existingItem = cartArray.find(item => item.name == itemData)
 
-    cartArray.push(itemObj)
+    if (existingItem) {
+        existingItem.quantity += 1
+    } else {
+        cartArray.push({...itemObj, quantity: 1})
+    }
+
     showCart()
     renderCart(cartArray)
+}
+
+function removeItemFromCart(itemData) {
+    const itemIndex = cartArray.findIndex(el => el.name == itemData)
+    
+    if (itemIndex !== -1) {
+        cartArray.splice(itemIndex,1)
+    }
+    
+    if (cartArray.length) {
+        renderCart(cartArray)
+    } else {
+        hideCart()
+    }
 }
 
 function renderCart(arr) {
@@ -23,13 +45,18 @@ function renderCart(arr) {
     cartItems.innerHTML = ''
     arr.forEach((item) => {
         cartItems.innerHTML += `
-            <p class="cart-item">${item.name}<span class="remove" data-remove="${item.name}">Remove</span><span class="cart-item-price">£${item.price}</span></p>`
+            <p class="cart-item">${item.name} ${item.quantity == 1 ? ``: `x${item.quantity}`}<span class="remove" data-remove="${item.name}">Remove</span><span class="cart-item-price">£${item.price * item.quantity}</span></p>`
     })
 }
 
 function showCart() {
     const orderCart = document.getElementById("order-cart")
     orderCart.classList.remove("hidden")
+}
+
+function hideCart() {
+    const orderCart = document.getElementById("order-cart")
+    orderCart.classList.add("hidden")
 }
 
 function getMenuItems(arr) {

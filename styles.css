@@ -130,6 +130,7 @@ header, #menu-items{
 
 .remove {
     color: #8b8b8b;
+    cursor: pointer;
 }
 
 .cart-item-price {
