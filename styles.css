@@ -43,7 +43,7 @@ h1 {
     font-weight: 300;
 }
 
-header, #menu-items {
+header, #menu-items{
     padding: 46px;
 }
 
@@ -102,4 +102,55 @@ header, #menu-items {
 
 .item-ingreds {
     color: #8b8b8b
+}
+
+/* Order cart */
+
+#order-cart {
+    padding: 0 48px 48px;
+    background-color: #fff;
+    border: 1px dotted red;
+}
+
+#cart-header {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+}
+
+.remove {
+    color: #8b8b8b;
+}
+
+.cart-item-price {
+    margin-left: auto;
+}
+
+hr {
+    border: 1px solid #000;
+    margin: 15px 0;
+}
+
+#total-price-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+#complete-order {
+    margin-top: 40px;
+    height: 60px;
+    width: 100%;
+
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    
+    background-color: #16db99;
+    border-radius: 8px;
+    border: none;
 }
