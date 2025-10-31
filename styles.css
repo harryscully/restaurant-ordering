@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     font-family: "Roboto Condensed", monospace, sans-serif;
@@ -14,9 +20,6 @@ body {
 
 header {
     margin: 0 auto;
-    padding: 46px;
-    box-sizing: border-box;
-
     height: 167px;
 
     background-image: url(./images/image.png);
@@ -36,4 +39,51 @@ h1 {
 #header-subtitle {
     font-size: 20px;
     font-weight: 300;
+}
+
+header, #menu-items {
+    padding: 46px;
+}
+
+#menu-items {
+    font-family: "Roboto Mono";
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu-item {
+    border-bottom: 1px solid #d2d2d2;
+    height: 120px;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-item {
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.add-item:hover {
+    fill: #d2d2d2;
+    cursor: pointer;
+}
+
+.item-emoji {
+    line-height: 70px;
+    font-size: 70px;
+}
+
+.item-ingreds {
+    color: #8b8b8b
 }
