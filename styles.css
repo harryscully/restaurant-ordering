@@ -13,7 +13,7 @@ body {
 .container {
     margin: 0 auto;
     width: 600px;
-    height: 100vh;
+    height: 100%;
 
     background-color: #fff;
 }
