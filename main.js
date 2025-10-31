@@ -111,7 +111,7 @@ function renderMenuItems() {
 }
 
 function showPaymentModal() {
-    document.getElementById("my-modal").classList.toggle("hidden")
+    document.getElementById("my-modal").classList.remove("hidden")
 }
 
 function hidePaymentModal() {
@@ -124,6 +124,7 @@ function showOrderSuccess(userName) {
     const orderSuccess = document.getElementById("order-success")
     const orderSuccessText = document.createElement("p")
     
+    orderSuccess.innerHTML = ''
     orderSuccess.classList.remove("hidden")
     orderSuccessText.textContent = `Thanks, ${userName}. Your order is on its way!`
     orderSuccess.appendChild(orderSuccessText)
