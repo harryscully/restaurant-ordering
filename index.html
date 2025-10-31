@@ -40,8 +40,8 @@
                 <h3 id="modal-header">Enter card details</h3>
                 <form>
                     <input id="name" type="text" placeholder="Enter your name" required>
-                    <input id="card-num" type="number" placeholder="Enter card number" required>
-                    <input id="cvv" type="number" placeholder="Enter CVV" required>
+                    <input id="card-num" type="text" inputmode="numeric" placeholder="Enter 16-digit card number" required>
+                    <input id="cvv" type="text" pattern="pattern="\d{16}"" inputmode="numeric" placeholder="Enter 3-digit CVV" pattern="\d{3}" required>
                     <button type="submit" id="pay">Pay</button>
                 </form>
             </div>

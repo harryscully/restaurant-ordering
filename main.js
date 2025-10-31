@@ -8,7 +8,7 @@ document.addEventListener("click", (e) => {
     } else if (e.target.id == "complete-order") {
         showPaymentModal()
     } else if (e.target.id == "pay") {
-        hidePaymentModal()
+        // hidePaymentModal()
     }
 })
 
