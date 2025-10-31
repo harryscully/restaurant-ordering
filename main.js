@@ -47,6 +47,14 @@ function renderCart(arr) {
         cartItems.innerHTML += `
             <p class="cart-item">${item.name} ${item.quantity == 1 ? ``: `x${item.quantity}`}<span class="remove" data-remove="${item.name}">Remove</span><span class="cart-item-price">£${item.price * item.quantity}</span></p>`
     })
+
+    document.getElementById("total-price").textContent = `£${calculateTotalPrice(arr)}`
+}
+
+function calculateTotalPrice(arr) {
+    return arr.reduce((total, item) => {
+        return total + (item.quantity * item.price)
+    }, 0)
 }
 
 function showCart() {
