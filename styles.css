@@ -109,13 +109,18 @@ header, #menu-items{
 #order-cart {
     padding: 0 48px 48px;
     background-color: #fff;
-    border: 1px dotted red;
 }
 
 #cart-header {
     text-align: center;
     font-size: 22px;
     margin-bottom: 40px;
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .cart-item {

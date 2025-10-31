@@ -2,9 +2,18 @@ import { menuArray } from "./data/data.js";
 
 document.addEventListener("click", (e) => {
     if (e.target.dataset.add) {
-        console.log(e.target.dataset.add)
+        addOrderToCart(e.target.dataset.add)
     }
 })
+
+function addOrderToCart(itemData) {
+    const itemObj = menuArray.filter((el) => {
+        return el.name == itemData
+    })[0]
+    document.getElementById("cart-items").innerHTML += `
+        <p class="cart-item">${itemObj.name}<span class="remove">Remove</span><span class="cart-item-price">£${itemObj.price}</span></p>
+    `
+}
 
 function getMenuItems(arr) {
     let menuItems = ''
