@@ -6,13 +6,30 @@ document.addEventListener("click", (e) => {
     }
 })
 
+const cartArray = []
+
 function addOrderToCart(itemData) {
     const itemObj = menuArray.filter((el) => {
         return el.name == itemData
     })[0]
-    document.getElementById("cart-items").innerHTML += `
-        <p class="cart-item">${itemObj.name}<span class="remove">Remove</span><span class="cart-item-price">£${itemObj.price}</span></p>
-    `
+
+    cartArray.push(itemObj)
+    showCart()
+    renderCart(cartArray)
+}
+
+function renderCart(arr) {
+    const cartItems = document.getElementById("cart-items")
+    cartItems.innerHTML = ''
+    arr.forEach((item) => {
+        cartItems.innerHTML += `
+            <p class="cart-item">${item.name}<span class="remove" data-remove="${item.name}">Remove</span><span class="cart-item-price">£${item.price}</span></p>`
+    })
+}
+
+function showCart() {
+    const orderCart = document.getElementById("order-cart")
+    orderCart.classList.remove("hidden")
 }
 
 function getMenuItems(arr) {
