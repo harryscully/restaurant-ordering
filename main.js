@@ -27,10 +27,15 @@ function addOrderToCart(itemData) {
 }
 
 function removeItemFromCart(itemData) {
-    const itemIndex = cartArray.findIndex(el => el.name == itemData)
-    
-    if (itemIndex !== -1) {
-        cartArray.splice(itemIndex,1)
+    const item = cartArray.find(el => el.name == itemData)
+
+    if (item.quantity > 1) {
+        item.quantity -= 1
+    } else {
+        const itemIndex = cartArray.findIndex(el => el.name == itemData)
+        if (itemIndex !== -1) {
+            cartArray.splice(itemIndex,1)
+        }
     }
     
     if (cartArray.length) {
@@ -45,7 +50,7 @@ function renderCart(arr) {
     cartItems.innerHTML = ''
     arr.forEach((item) => {
         cartItems.innerHTML += `
-            <p class="cart-item">${item.name} ${item.quantity == 1 ? ``: `x${item.quantity}`}<span class="remove" data-remove="${item.name}">Remove</span><span class="cart-item-price">£${item.price * item.quantity}</span></p>`
+            <p class="cart-item">${item.name} ${item.quantity > 1 ? `x${item.quantity}` : ``}<span class="remove" data-remove="${item.name}">Remove</span><span class="cart-item-price">£${item.price * item.quantity}</span></p>`
     })
 
     document.getElementById("total-price").textContent = `£${calculateTotalPrice(arr)}`
