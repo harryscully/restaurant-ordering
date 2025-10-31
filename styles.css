@@ -18,6 +18,8 @@ body {
     background-color: #fff;
 }
 
+/* Header section */
+
 header {
     margin: 0 auto;
     height: 167px;
@@ -45,6 +47,8 @@ header, #menu-items {
     padding: 46px;
 }
 
+/* Menu items */
+
 #menu-items {
     font-family: "Roboto Mono";
     display: flex;
@@ -68,14 +72,26 @@ header, #menu-items {
 
 .add-item {
     margin-left: auto;
+    margin-top: 25px;
+
     width: 40px;
     height: 40px;
+
     border-radius: 50%;
-    margin-top: 25px;
+    border: 1px solid #8b8b8b;
+
+    color: #8b8b8b;
+    background-color: #fff;
+
+    font-family: "Roboto Mono";
+    font-size: 30px;
+    font-weight: 300;
+    
 }
 
 .add-item:hover {
-    fill: #d2d2d2;
+    color: #666;
+    border: 1px solid #666;
     cursor: pointer;
 }
 
