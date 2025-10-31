@@ -35,13 +35,15 @@
             <button id="complete-order">Complete Order</button>
         </section>
 
-        <div id="my-modal" class="modal hidden">
+        <div id="my-modal" class="modal">
             <div class="modal-content">
-                <h3>Enter card details</h3>
-                <input id="name" type="text" placeholder="Enter your name">
-                <input id="card-num" type="number" placeholder="Enter card number">
-                <input id="cvv" type="number" placeholder="Enter CVV">
-                <button id="pay">Pay</button>
+                <h3 id="modal-header">Enter card details</h3>
+                <form>
+                    <input id="name" type="text" placeholder="Enter your name" required>
+                    <input id="card-num" type="number" placeholder="Enter card number" required>
+                    <input id="cvv" type="number" placeholder="Enter CVV" required>
+                    <button type="submit" id="pay">Pay</button>
+                </form>
             </div>
         </div>
     </main>
