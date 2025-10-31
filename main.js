@@ -7,12 +7,15 @@ document.addEventListener("click", (e) => {
         removeItemFromCart(e.target.dataset.remove)
     } else if (e.target.id == "complete-order") {
         showPaymentModal()
-    } else if (e.target.id == "pay") {
-        // hidePaymentModal()
     }
 })
 
-const cartArray = []
+document.getElementById("payment-form").addEventListener("submit", (e) => {
+    e.preventDefault()
+    hidePaymentModal()
+})
+
+let cartArray = []
 
 function addOrderToCart(itemData) {
     const itemObj = menuArray.filter((el) => {
@@ -107,6 +110,8 @@ function showPaymentModal() {
 }
 
 function hidePaymentModal() {
+    cartArray = []
+    hideCart()
     document.getElementById("my-modal").classList.add("hidden")
 }
 

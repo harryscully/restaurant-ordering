@@ -35,13 +35,13 @@
             <button id="complete-order">Complete Order</button>
         </section>
 
-        <div id="my-modal" class="modal">
+        <div id="my-modal" class="modal hidden">
             <div class="modal-content">
                 <h3 id="modal-header">Enter card details</h3>
-                <form>
+                <form id="payment-form">
                     <input id="name" type="text" placeholder="Enter your name" required>
-                    <input id="card-num" type="text" inputmode="numeric" placeholder="Enter 16-digit card number" required>
-                    <input id="cvv" type="text" pattern="pattern="\d{16}"" inputmode="numeric" placeholder="Enter 3-digit CVV" pattern="\d{3}" required>
+                    <input id="card-num" type="text" inputmode="numeric" placeholder="Enter 16-digit card number" pattern="\d{16}" required>
+                    <input id="cvv" type="text" inputmode="numeric" placeholder="Enter 3-digit CVV" pattern="\d{3}" required>
                     <button type="submit" id="pay">Pay</button>
                 </form>
             </div>

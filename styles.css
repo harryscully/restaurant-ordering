@@ -164,6 +164,11 @@ hr {
     cursor: pointer;
 }
 
+#complete-order:hover,
+#pay:hover {
+    background-color: #12b880;
+}
+
 
 .modal {
     position: fixed;
