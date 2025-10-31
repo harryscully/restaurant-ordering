@@ -32,6 +32,7 @@ function addOrderToCart(itemData) {
 
     showCart()
     renderCart(cartArray)
+    hideOrderSuccess()
 }
 
 function removeItemFromCart(itemData) {
@@ -118,6 +119,10 @@ function hidePaymentModal() {
 
 function showOrderSuccess() {
     document.getElementById("order-success").classList.remove("hidden")
+}
+
+function hideOrderSuccess() {
+    document.getElementById("order-success").classList.add("hidden")
 }
 
 renderMenuItems()
